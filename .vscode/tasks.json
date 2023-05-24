@@ -1,0 +1,64 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run test",
+            "type": "shell",
+            "command": "./build/minEatingSpeed",
+            "windows": {
+                "command": ".\\build\\minEatingSpeed"
+            },
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo ${env:GCC}"
+        },
+        {
+            "label": "ng g",
+            "type": "shell",
+            "command": "ng",
+            "args": [
+                "g",
+                "${input:componentType}",
+                "${input:componetName}"
+            ]
+        }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "componentType",
+            "description": "What type of component do you want to creat?",
+            "options": [
+                "component",
+                "directive",
+                "pipe",
+                "service",
+                "class",
+                "guard",
+                "interface",
+                "enum",
+                "enum"
+            ],
+            "default": "component"
+        },
+        {
+            "type": "promptString",
+            "id": "componetName",
+            "description": "Name your component.",
+            "default": "my-new-component"
+        }
+    ]
+}
