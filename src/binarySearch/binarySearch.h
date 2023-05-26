@@ -13,4 +13,7 @@ int peakIndexInMountainArray(int *arr, int arr_size);
 /*leetcode 793 阶乘函数后K个零*/
 int preimageSizeFZF(int k);
 
+/*leetcode 34 在排序数组中查找元素的第一个和最后一个位置*/
+int *searchRange(int *nums, int numSize, int target, int *returnSize);
+
 #endif
